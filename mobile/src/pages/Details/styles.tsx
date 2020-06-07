@@ -2,6 +2,12 @@ import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
+    loadingIndicatorContainer: {
+        flex: 1,
+        paddingHorizontal: 32,
+        justifyContent: 'center'
+    },
+
     screen: {
         flex: 1
     },

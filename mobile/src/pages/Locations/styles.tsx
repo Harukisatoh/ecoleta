@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         overflow: 'hidden',
         marginTop: 16,
+        justifyContent: 'center'
     },
 
     map: {
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
 
-    itemTitle: {
+    itemName: {
         fontFamily: 'Roboto_400Regular',
         textAlign: 'center',
         fontSize: 13,
