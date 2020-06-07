@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, ScrollView, Image } from 'react-native';
+import { View, TouchableOpacity, Text, ScrollView, Image, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import MapView, { Marker } from 'react-native-maps'
 
@@ -19,7 +19,7 @@ const Locations = () => {
     }
 
     return (
-        <>
+        <SafeAreaView style={styles.screen}>
             <View style={styles.container} >
                 <TouchableOpacity onPress={handleNavigateBack}>
                     <Icon name="arrow-left" size={20} color="#34cb79" />
@@ -98,7 +98,7 @@ const Locations = () => {
                     </TouchableOpacity>
                 </ScrollView>
             </View>
-        </>
+        </SafeAreaView>
     );
 };
 
