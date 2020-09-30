@@ -27,7 +27,7 @@ class LocationsController {
                 address_number,
                 city,
                 state,
-                image: 'https://images.unsplash.com/photo-1549986584-6d9e49fd6495?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60&h=400'
+                image_url: 'https://images.unsplash.com/photo-1549986584-6d9e49fd6495?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60&h=400'
             };
 
             const [location_id] = await trx('recycling_locations').insert(location);
@@ -92,11 +92,11 @@ class LocationsController {
 
 
         const acceptedItems = await knex('recyclable_items')
-            .select('recyclable_items.name', 'recyclable_items.image')
+            .select('recyclable_items.name', 'recyclable_items.image_url')
             .join('location_accepted_items', 'location_accepted_items.item_id', '=', 'recyclable_items.id')
             .where('location_accepted_items.location_id', requestedId);
 
-        // SELECT recyclable_items.name, recyclable_items.image FROM recyclable_items
+        // SELECT recyclable_items.name, recyclable_items.image_url FROM recyclable_items
         // JOIN location_accepted_items ON location_accepted_items.item_id = recyclable_items.id
         // WHERE location_accepted_items.location_id = {requestedId};
 

@@ -1,6 +1,6 @@
 import Knex from 'knex';
 
-export async function up (knex: Knex) {
+export async function up(knex: Knex) {
     return knex.schema.createTable('recycling_locations', (table) => {
         table.increments('id').primary();
         table.string('name').notNullable();
@@ -11,10 +11,10 @@ export async function up (knex: Knex) {
         table.integer('address_number').notNullable();
         table.string('city').notNullable();
         table.string('state', 2).notNullable();
-        table.string('image').notNullable();
+        table.string('image_url').notNullable();
     });
 }
 
-export async function down (knex: Knex) {
+export async function down(knex: Knex) {
     return knex.schema.dropTable('recycling_locations');
 }
